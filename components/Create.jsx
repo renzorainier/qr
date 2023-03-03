@@ -70,4 +70,3 @@ function StudentCollection() {
 }
 
 export default StudentCollection;
-
