@@ -258,7 +258,38 @@ function TodayAttendance() {
                   </td>
                   <td className="p-2">{student.strand}</td>
                   <td className="p-2 ">{student.section}</td>
-                  presentStudents.
+                  <td className="p-2 whitespace-nowrap">
+                    {student.attendanceStatus === "late" && (
+                      <div className="bg-[#EC7063] h-3 w-9 rounded-sm inline-block mr-1">
+                        {student.lastScan
+                          ? student.lastScan.toLocaleTimeString([], {
+                              hour: "numeric",
+                              minute: "2-digit",
+                            })
+                          : "N/A"}
+                      </div>
+                    )}
+                    {student.attendanceStatus === "ontime" && (
+                      <div className="bg-[#F7DC6F] h-3 w-9 rounded-sm inline-block mr-1">
+                        {student.lastScan
+                          ? student.lastScan.toLocaleTimeString([], {
+                              hour: "numeric",
+                              minute: "2-digit",
+                            })
+                          : "N/A"}
+                      </div>
+                    )}
+                    {student.attendanceStatus === "early" && (
+                      <div className="bg-[#2ECC71] h-3 w-9 rounded-sm inline-block mr-1">
+                        {student.lastScan
+                          ? student.lastScan.toLocaleTimeString([], {
+                              hour: "numeric",
+                              minute: "2-digit",
+                            })
+                          : "N/A"}
+                      </div>
+                    )}
+                  </td>
                 </tr>
               ))}
             </tbody>
