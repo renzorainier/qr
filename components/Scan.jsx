@@ -10,7 +10,7 @@ function Scan() {
 
   const schedules = {
     'STEM': {
-      '1A': {
+      '1B': {
         'Monday': {
           'startTime': "17:00:00",
         },
