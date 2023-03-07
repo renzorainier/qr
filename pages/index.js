@@ -7,7 +7,7 @@ import SavePresentStudents from "components/Save";
 import Generate from "components/Generate";
 import { useEffect } from "react";
 import StudentCollection from "components/Create";
-import TabSelector  from "components/Tab";
+import TabSelector from "components/Tab";
 
 export default function Home() {
   const [component, setComponent] = useState("");
@@ -15,8 +15,6 @@ export default function Home() {
   const handleClick = (event) => {
     setComponent(event.target.value);
   };
-
-
 
   const renderComponent = () => {
     switch (component) {
@@ -32,8 +30,8 @@ export default function Home() {
         return <Generate />;
       case "Create":
         return <StudentCollection />;
-        case "Tab":
-        return <TabSelector />
+      case "Tab":
+        return <TabSelector />;
       default:
         return (
           <>
@@ -43,20 +41,27 @@ export default function Home() {
             <p className="text-lg mb-6 text-white">Choose Below</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <button
+                value="Tab"
+                className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded transition-colors duration-200"
+                onClick={handleClick}
+              >
+                Attendance
+              </button>
+              {/* <button
                 value="TodayAttendance"
                 className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded transition-colors duration-200"
                 onClick={handleClick}
               >
                 Attendance for Today
-              </button>
+              </button> */}
 
-              <button
+              {/* <button
                 value="PastAttendance"
                 className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded transition-colors duration-200"
                 onClick={handleClick}
               >
                 Past Attendance
-              </button>
+              </button> */}
 
               <button
                 value="Scan"
@@ -65,13 +70,13 @@ export default function Home() {
               >
                 Scan
               </button>
-              <button
+              {/* <button
                 value="Save"
                 className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded transition-colors duration-200"
                 onClick={handleClick}
               >
                 Save
-              </button>
+              </button> */}
               <button
                 value="Generate"
                 className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded transition-colors duration-200"
@@ -85,13 +90,6 @@ export default function Home() {
                 onClick={handleClick}
               >
                 Update Data
-              </button>
-              <button
-                value="Tab"
-                className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded transition-colors duration-200"
-                onClick={handleClick}
-              >
-                Tab
               </button>
             </div>
           </>
@@ -114,13 +112,13 @@ export default function Home() {
         <meta name="description" content="Welcome to Scas Attendance Scan" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&amp;display=swap" rel="stylesheet"/>
-
+        <link
+          href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&amp;display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <main className="container mx-auto ">{renderComponent()}</main>
-      <div>
-
-      </div>
+      <div></div>
     </>
   );
 }
